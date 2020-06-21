@@ -1,0 +1,5 @@
+You need to add an .env file. It must have:
+
+1. NODE_ENV = 'development' ('prodaction')
+
+2. SERVER_PORT=<number_of_port>  
