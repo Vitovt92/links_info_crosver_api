@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  links_info_crosver_api:
+    image: links_info_crosver_api
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8081

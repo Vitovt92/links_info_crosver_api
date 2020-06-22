@@ -6,6 +6,10 @@ dotenv.config();
 
 const port = process.env.SERVER_PORT;
 
+let next = 1;
+
+next++;
+
 const app = express();
 
 app.get("/", (req, res) => {
