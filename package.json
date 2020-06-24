@@ -9,8 +9,7 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node .",
-    "predev": "npm run lint",
-    "dev": "nodemon --watch src -e ts --exec ts-node ./src/index.ts",
+    "dev": "nodemon --debug=5858",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

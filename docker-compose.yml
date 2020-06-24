@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   dev_links_info_crosver_api:
@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile.dev
     command: npm run dev
     ports:
-      - 8081
+      - 8081:8081
+      - 5858:5858
     volumes:
       - .:/usr/srv/links_info_crosver_api

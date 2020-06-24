@@ -15,5 +15,6 @@ RUN npm install pm2 -g
 COPY ./dist .
 
 EXPOSE 8081
+EXPOSE 5858
 
-CMD ["pm2-runtime", "index.js"]
+ENTRYPOINT ["pm2-runtime", "index.js"]
