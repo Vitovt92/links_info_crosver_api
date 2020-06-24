@@ -17,5 +17,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  //  console.log(`Server started ap http://localhost:${port}`);
+  console.log(`Server started ap http://localhost:${port}`);
 });

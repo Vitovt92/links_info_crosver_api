@@ -2,12 +2,18 @@ FROM node:12
 
 WORKDIR /usr/srv/links_info_crosver_api
 
+ENV NODE_ENV=development
+
+ENV SERVER_PORT=8081
+
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --no-optional
+
+RUN npm install -g -D nodemon 
 
 COPY . .
 
 EXPOSE 8081
 
-CMD ["npm", "run", "dev"]
+ENTRYPOINT ["npm", "run", "dev"]
