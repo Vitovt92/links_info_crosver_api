@@ -16,4 +16,5 @@ COPY ./dist .
 
 EXPOSE 8081
 
+
 ENTRYPOINT ["pm2-runtime", "index.js"]
