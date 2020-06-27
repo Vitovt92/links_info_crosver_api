@@ -15,6 +15,8 @@ const app = express();
 
 app.get("/", (req, res) => {
   next++;
+  next++;
+
   console.log(next);
   res.send("Hello world!");
 });

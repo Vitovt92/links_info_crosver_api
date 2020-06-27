@@ -1,12 +1,13 @@
-version: '3.4'
+version: "2"
 
 services:
-  links_info_crosver_api:
-    image: links_info_crosver_api
-    build: .
-    environment:
-      NODE_ENV: development
+  dev_links_info_crosver_api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm run dev
     ports:
-      - 8081
+      - 8081:8081
       - 9229:9229
-    command: node --inspect=0.0.0.0:9229 .
+    volumes:
+      - .:/usr/srv/links_info_crosver_api

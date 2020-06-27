@@ -1,13 +1,10 @@
 version: "2"
 
 services:
-  dev_links_info_crosver_api:
+  prod_links_info_crosver_api:
     build:
       context: .
-      dockerfile: Dockerfile.dev
-    command: npm run dev
+      dockerfile: Dockerfile
+    command: npm start
     ports:
       - 8081:8081
-      - 9229:9229
-    volumes:
-      - .:/usr/srv/links_info_crosver_api
