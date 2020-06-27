@@ -8,6 +8,6 @@ services:
     command: npm run dev
     ports:
       - 8081:8081
-      - 5858:5858
+      - 9229:9229
     volumes:
       - .:/usr/srv/links_info_crosver_api
