@@ -4,31 +4,28 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
 } from "typeorm";
 
+import { Crosver_tables } from "./Crosver";
+
 @Entity()
-export class Crosver_tables {
+export class crosver_Photos {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  crosverLocation: string;
-
-  @Column("text")
-  crosverDocks: string;
-
-  @Column("text")
-  crosverComments: string;
-
-  @Column()
-  lat: string;
-
-  @Column()
-  lng: string;
+  photoName: string;
 
   @CreateDateColumn({ name: "createdAt" })
   createdAt: Date;
 
   @UpdateDateColumn({ name: "updatedAt" })
   updatedAt: Date;
+
+  // @ManyToOne(
+  //   (type) => Crosver_tables,
+  //   (crosver_tables) => crosver_tables.crosver_Photos
+  // )
+  // crosver_tables: Crosver_tables;
 }

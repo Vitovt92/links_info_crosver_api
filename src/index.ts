@@ -2,7 +2,9 @@ import dotenv from "dotenv";
 import express from "express";
 import "reflect-metadata";
 
-import { createConnection } from "typeorm";
+//import database ORM
+import { createConnection, getRepository } from "typeorm";
+import { Crosver_tables } from "./entity/crosver/Crosver";
 
 //initialize configuration
 dotenv.config();
@@ -12,7 +14,12 @@ createConnection()
   .then(async (connection) => {
     const app = express();
 
-    app.get("/", (req, res) => {
+    app.get("/", async (req, res) => {
+      // make test query db and log in console.
+      // const crosver_tablesRopository = getRepository(Crosver_tables);
+      // const crosvers = await crosver_tablesRopository.find();
+      // console.log(crosvers);
+
       console.log("hello world");
       res.send("Hello world!");
     });
