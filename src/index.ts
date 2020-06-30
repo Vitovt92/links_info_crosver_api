@@ -4,7 +4,7 @@ import "reflect-metadata";
 
 //import database ORM
 import { createConnection, getRepository } from "typeorm";
-import { Crosver_tables } from "./entity/crosver/Crosver";
+import { CrosverTables } from "./entity/old_db/CrosverTables";
 
 //initialize configuration
 dotenv.config();
@@ -16,9 +16,12 @@ createConnection()
 
     app.get("/", async (req, res) => {
       // make test query db and log in console.
-      // const crosver_tablesRopository = getRepository(Crosver_tables);
-      // const crosvers = await crosver_tablesRopository.find();
-      // console.log(crosvers);
+       const crosver_tablesRopository = getRepository(CrosverTables);
+       const crosvers = await crosver_tablesRopository
+          .createQueryBuilder("crosvers")
+          .leftJoinAndSelect("crosvers.crosverPhotos", "crosverPhotos")
+          .getMany();
+       console.log(crosvers);
 
       console.log("hello world");
       res.send("Hello world!");
