@@ -10,7 +10,8 @@
     "prestart": "npm run build",
     "start": "node .",
     "docker-start": "docker-compose up -d",
-    "dev": "nodemon --inspect=0.0.0.0:9229 src/index.ts",
+    "dev:debug": "nodemon --inspect=0.0.0.0:9229 src/index.ts",
+    "dev": "npm run lint && npx ts-node-dev ./src/index.ts",
     "docker-dev": "docker-compose -f docker-compose.debug.yml up",
     "test": "echo \"Error: no test specified\" && exit 1",
     "schema:log": "npx ts-node node_modules/.bin/typeorm schema:log"
@@ -54,6 +55,7 @@
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.56",
     "typeorm-model-generator": "^0.4.2",
     "typescript": "^3.9.5"
   }

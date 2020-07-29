@@ -7,7 +7,6 @@ import routes from "./routes";
 //import database ORM
 import { createConnection, getRepository } from "typeorm";
 
-
 //initialize configuration
 dotenv.config();
 const port = process.env.SERVER_PORT;
@@ -16,8 +15,8 @@ createConnection()
   .then(async (connection) => {
     const app = express();
 
-// set all routes from routes folder
-  
+    // set all routes from routes folder
+
     app.use("/", routes);
 
     app.listen(port, () => {
