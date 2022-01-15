@@ -53,7 +53,7 @@
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.56",
     "typeorm-model-generator": "^0.4.2",
